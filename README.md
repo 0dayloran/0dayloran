@@ -1,3 +1,4 @@
+<!-- MARKDOWN-AUTO-DOCS:START (IGNORE) -->
 <p align="center">
   <span style="display:inline-block;background:#000;color:#fff;font-size:3rem;font-family:monospace;padding:40px 100px;border-radius:20px;">
     stalk
