@@ -1,105 +1,63 @@
-"use client"
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&duration=2000&pause=500&color=FFFFFF&center=true&vCenter=true&width=500&lines=0dayloran" alt="Typing SVG" />
+</p>
 
-import { useState } from "react"
-import { Shield, Search, Code, Wifi, Terminal, Apple, Monitor, Globe } from "lucide-react"
+<p align="center">
+  <a href="https://t.me/gothamneversleeps">
+    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
+  </a>
+  <a href="https://x.com/0dayloran">
+    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="Twitter" />
+  </a>
+</p>
 
-const skills = [
-  { name: "Metasploit", icon: Shield },
-  { name: "Burp Suite", icon: Search },
-  { name: "Python", icon: Code },
-  { name: "Wireshark", icon: Wifi },
-  { name: "Linux", icon: Terminal },
-  { name: "macOS", icon: Apple },
-  { name: "Windows", icon: Monitor },
-]
+---
 
-export default function GitHubPortfolio() {
-  const [language, setLanguage] = useState<"rus" | "eng">("eng")
+### 🔧 **Core Stack**
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "eng" ? "rus" : "eng"))
-  }
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white" alt="Bash" />
+  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell" />
+</p>
 
-  const translations = {
-    skills: language === "eng" ? "Skills" : "Навыки",
-    language: language === "eng" ? "Language" : "Язык",
-  }
+### 🔍 **Security Tools**
 
-  return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
-      {/* Animated Username */}
-      <div className="mb-16">
-        <h1 className="text-6xl md:text-8xl font-thin tracking-wider animate-pulse">0dayloran</h1>
-      </div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Metasploit-258FFA?style=flat-square&logo=metasploit&logoColor=white" alt="Metasploit" />
+  <img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=flat-square" alt="Burp Suite" />
+  <img src="https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" />
+  <img src="https://img.shields.io/badge/Nmap-FFFFFF?style=flat-square&logo=nmap&logoColor=black" alt="Nmap" />
+  <img src="https://img.shields.io/badge/Hashcat-000000?style=flat-square" alt="Hashcat" />
+</p>
 
-      <div className="flex flex-col lg:flex-row gap-16 items-start">
-        {/* Skills Section */}
-        <div className="flex flex-col items-center">
-          <h2 className="text-2xl font-light mb-8 tracking-wide">{translations.skills}</h2>
+### 🖥️ **Operating Systems**
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {skills.map((skill, index) => {
-              const IconComponent = skill.icon
-              return (
-                <div
-                  key={skill.name}
-                  className="group flex flex-col items-center p-4 border border-white/20 rounded-lg 
-                           hover:border-white/40 hover:scale-105 transition-all duration-300 
-                           cursor-pointer min-w-[120px]"
-                >
-                  <IconComponent
-                    size={32}
-                    className="mb-3 text-white/80 group-hover:text-white transition-colors duration-300"
-                  />
-                  <span className="text-sm font-light text-center text-white/80 group-hover:text-white transition-colors duration-300">
-                    {skill.name}
-                  </span>
-                </div>
-              )
-            })}
-          </div>
-        </div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white" alt="Kali Linux" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/macOS-000000?style=flat-square&logo=macos&logoColor=white" alt="macOS" />
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows" />
+</p>
 
-        {/* Language Section */}
-        <div className="flex flex-col items-center lg:ml-8">
-          <h2 className="text-2xl font-light mb-8 tracking-wide">{translations.language}</h2>
+### 🛠️ **Other Tools**
 
-          <div className="flex flex-col gap-3">
-            <button
-              onClick={toggleLanguage}
-              className={`px-6 py-3 border rounded-lg transition-all duration-300 min-w-[100px]
-                         ${
-                           language === "eng"
-                             ? "border-white bg-white text-black"
-                             : "border-white/20 hover:border-white/40 hover:scale-105"
-                         }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Globe size={16} />
-                <span className="font-light">ENG</span>
-              </div>
-            </button>
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/OpenVAS-00C7D4?style=flat-square" alt="OpenVAS" />
+  <img src="https://img.shields.io/badge/BloodHound-E74C3C?style=flat-square" alt="BloodHound" />
+</p>
 
-            <button
-              onClick={toggleLanguage}
-              className={`px-6 py-3 border rounded-lg transition-all duration-300 min-w-[100px]
-                         ${
-                           language === "rus"
-                             ? "border-white bg-white text-black"
-                             : "border-white/20 hover:border-white/40 hover:scale-105"
-                         }`}
-            >
-              <div className="flex items-center justify-center gap-2">
-                <Globe size={16} />
-                <span className="font-light">RUS</span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
+---
 
-      {/* Subtle footer */}
-      <div className="mt-16 text-white/30 text-sm font-light">GitHub Portfolio UI</div>
-    </div>
-  )
-}
+### 📊 **GitHub Stats**
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=0dayloran&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" width="450"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=0dayloran&layout=compact&theme=dark&hide_border=true" alt="Top Languages" width="350"/>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=0dayloran&color=lightgrey&style=flat-square" alt="Profile Views" />
+</p>
