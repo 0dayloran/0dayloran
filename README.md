@@ -1,32 +1,105 @@
-<!-- MARKDOWN-AUTO-DOCS:START (IGNORE) -->
-<p align="center">
-  <span style="display:inline-block;background:#000;color:#fff;font-size:3rem;font-family:monospace;padding:40px 100px;border-radius:20px;">
-    stalk
-  </span>
-</p>
+"use client"
 
-<p align="center">
-  <a href="https://x.com/0dayloran" target="_blank">
-    <img src="https://img.shields.io/badge/X-0dayloran-000?style=for-the-badge&logo=x&logoColor=white&labelColor=000" alt="X badge" height="28"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://t.me/gothamneversleeps" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-gothamneversleeps-000?style=for-the-badge&logo=telegram&logoColor=white&labelColor=000" alt="Telegram badge" height="28"/>
-  </a>
-</p>
+import { useState } from "react"
+import { Shield, Search, Code, Wifi, Terminal, Apple, Monitor, Globe } from "lucide-react"
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Metasploit-000?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0iTTggMEMzLjU4OCAwIDAgMy41ODggMCA4czMuNTg4IDggOCA4IDgtMy41ODggOC04LTMuNTg4LTgtOC04em0wIDE0LjE0MmMtMy4zNDEgMC02LjE0Mi0yLjgwMS02LjE0Mi02LjE0MiAwLTMuMzQxIDIuODAxLTYuMTQyIDYuMTQyLTYuMTQyIDMuMzQxIDAgNi4xNDIgMi44MDEgNi4xNDIgNi4xNDIgMCAzLjM0MS0yLjgwMSA2LjE0Mi02LjE0MiA2LjE0MnoiLz48L3N2Zz4=" alt="Metasploit" height="28"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Burp%20Suite-000?style=for-the-badge&logo=burpsuite&logoColor=white&labelColor=000" alt="Burp Suite" height="28"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Python-000?style=for-the-badge&logo=python&logoColor=white&labelColor=000" alt="Python" height="28"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Wireshark-000?style=for-the-badge&logo=wireshark&logoColor=white&labelColor=000" alt="Wireshark" height="28"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Linux-000?style=for-the-badge&logo=linux&logoColor=white&labelColor=000" alt="Linux" height="28"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/macOS-000?style=for-the-badge&logo=apple&logoColor=white&labelColor=000" alt="macOS" height="28"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Windows-000?style=for-the-badge&logo=windows&logoColor=white&labelColor=000" alt="Windows" height="28"/>
-</p>
+const skills = [
+  { name: "Metasploit", icon: Shield },
+  { name: "Burp Suite", icon: Search },
+  { name: "Python", icon: Code },
+  { name: "Wireshark", icon: Wifi },
+  { name: "Linux", icon: Terminal },
+  { name: "macOS", icon: Apple },
+  { name: "Windows", icon: Monitor },
+]
+
+export default function GitHubPortfolio() {
+  const [language, setLanguage] = useState<"rus" | "eng">("eng")
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "eng" ? "rus" : "eng"))
+  }
+
+  const translations = {
+    skills: language === "eng" ? "Skills" : "Навыки",
+    language: language === "eng" ? "Language" : "Язык",
+  }
+
+  return (
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
+      {/* Animated Username */}
+      <div className="mb-16">
+        <h1 className="text-6xl md:text-8xl font-thin tracking-wider animate-pulse">0dayloran</h1>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-16 items-start">
+        {/* Skills Section */}
+        <div className="flex flex-col items-center">
+          <h2 className="text-2xl font-light mb-8 tracking-wide">{translations.skills}</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {skills.map((skill, index) => {
+              const IconComponent = skill.icon
+              return (
+                <div
+                  key={skill.name}
+                  className="group flex flex-col items-center p-4 border border-white/20 rounded-lg 
+                           hover:border-white/40 hover:scale-105 transition-all duration-300 
+                           cursor-pointer min-w-[120px]"
+                >
+                  <IconComponent
+                    size={32}
+                    className="mb-3 text-white/80 group-hover:text-white transition-colors duration-300"
+                  />
+                  <span className="text-sm font-light text-center text-white/80 group-hover:text-white transition-colors duration-300">
+                    {skill.name}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Language Section */}
+        <div className="flex flex-col items-center lg:ml-8">
+          <h2 className="text-2xl font-light mb-8 tracking-wide">{translations.language}</h2>
+
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={toggleLanguage}
+              className={`px-6 py-3 border rounded-lg transition-all duration-300 min-w-[100px]
+                         ${
+                           language === "eng"
+                             ? "border-white bg-white text-black"
+                             : "border-white/20 hover:border-white/40 hover:scale-105"
+                         }`}
+            >
+              <div className="flex items-center justify-center gap-2">
+                <Globe size={16} />
+                <span className="font-light">ENG</span>
+              </div>
+            </button>
+
+            <button
+              onClick={toggleLanguage}
+              className={`px-6 py-3 border rounded-lg transition-all duration-300 min-w-[100px]
+                         ${
+                           language === "rus"
+                             ? "border-white bg-white text-black"
+                             : "border-white/20 hover:border-white/40 hover:scale-105"
+                         }`}
+            >
+              <div className="flex items-center justify-center gap-2">
+                <Globe size={16} />
+                <span className="font-light">RUS</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Subtle footer */}
+      <div className="mt-16 text-white/30 text-sm font-light">GitHub Portfolio UI</div>
+    </div>
+  )
+}
